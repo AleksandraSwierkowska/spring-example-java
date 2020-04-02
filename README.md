@@ -12,3 +12,7 @@ Environment variables required to connect to database:
 ```
     ?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
 ``` 
+
+SQL scripts order:
+1. create_script.sql
+2. data_script.sql
