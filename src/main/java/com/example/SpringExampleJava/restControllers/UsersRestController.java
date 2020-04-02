@@ -5,9 +5,9 @@ import com.example.SpringExampleJava.exceptions.UserNotFoundException;
 import com.example.SpringExampleJava.services.UsersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,7 +22,8 @@ public class UsersRestController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUsers(@Param("email") String email) throws UserNotFoundException {
+    public ResponseEntity<User> getUser() throws UserNotFoundException {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = service.getUserByEmail(email);
         if (user == null) {
             throw new UserNotFoundException(email);
