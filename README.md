@@ -10,5 +10,5 @@ Environment variables required to connect to database:
 
 \* in case of time zone error you need to append this to db url:
 ```
-    ?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    ?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
 ``` 
