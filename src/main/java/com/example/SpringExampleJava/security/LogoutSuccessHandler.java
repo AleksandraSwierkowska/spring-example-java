@@ -14,7 +14,7 @@ public class LogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
 
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-        if (authentication.getName() != null) {
+        if (authentication == null || authentication.getName() != null) {
             response.setStatus(HttpStatus.OK.value());
         } else {
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
